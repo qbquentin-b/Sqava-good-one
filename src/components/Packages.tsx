@@ -166,10 +166,10 @@ const Packages = () => {
         </div>
 
         {/* Version Mobile/Tablet - Carrousel horizontal */}
-        <div className="lg:hidden relative pt-6">
+        <div className="lg:hidden relative pt-8 overflow-visible">
           <div className="relative overflow-hidden">
             {/* Carrousel avec flèches intégrées */}
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-visible">
               {/* Flèche gauche */}
               <button
                 onClick={prevPackage}
@@ -187,13 +187,13 @@ const Packages = () => {
               </button>
 
               {/* Carrousel */}
-              <div className="overflow-hidden">
+              <div className="overflow-visible">
                 <div 
                   className="flex transition-transform duration-300 ease-in-out"
                   style={{ transform: `translateX(-${currentPackage * 100}%)` }}
                 >
                   {packages.map((pkg, index) => (
-                    <div key={index} className="w-full flex-shrink-0 px-4 pt-8">
+                    <div key={index} className="w-full flex-shrink-0 px-4 overflow-visible">
                       <PackageCard pkg={pkg} index={index} renderTextWithTooltips={renderTextWithTooltips} />
                     </div>
                   ))}
@@ -242,7 +242,7 @@ const Packages = () => {
 // Composant PackageCard séparé pour éviter la duplication
 const PackageCard = ({ pkg, index, renderTextWithTooltips }: { pkg: any; index: number; renderTextWithTooltips: (text: string) => any }) => (
   <div
-    className={`relative bg-white rounded-2xl shadow-lg flex flex-col ${
+    className={`relative bg-white rounded-2xl shadow-lg flex flex-col overflow-visible ${
       pkg.popular ? 'ring-2 ring-blue-500 scale-105' : ''
     }`}
   >
