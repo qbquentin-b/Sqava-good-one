@@ -166,7 +166,7 @@ const Packages = () => {
         </div>
 
         {/* Version Mobile/Tablet - Carrousel horizontal */}
-        <div className="lg:hidden relative">
+        <div className="lg:hidden relative pt-6">
           <div className="relative overflow-hidden">
             {/* Carrousel avec flèches intégrées */}
             <div className="relative overflow-hidden">
@@ -247,7 +247,7 @@ const PackageCard = ({ pkg, index, renderTextWithTooltips }: { pkg: any; index: 
     }`}
   >
     {pkg.popular && (
-      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 animate-bounce-in animate-delay-400">
+      <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 animate-bounce-in animate-delay-400">
         <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-semibold animate-pulse-glow">
           ⭐ Le plus populaire
         </div>
