@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Check, Star, Crown, Zap, Sparkles, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import Tooltip from './Tooltip';
 
 const Packages = () => {
   const titleAnimation = useScrollAnimation();
@@ -17,14 +18,14 @@ const Packages = () => {
       features: [
         'Jusqu\'à 5 pages (Accueil, Prestations, À propos, Contact, etc.)',
         'Design personnalisé aux couleurs de l\'activité',
-        'Formulaire de contact avec envoi par e-mail',
-        'Carte Google Maps intégrée',
-        'Réseaux sociaux cliquables',
-        'Mentions légales & politique de confidentialité',
-        'Bandeau cookies RGPD + gestion du consentement',
-        'Menu classique (PDF ou HTML simple pour les restaurants)',
-        'Optimisation mobile & SEO local basique',
-        'Hébergement inclus pendant 1 an (puis ~80€/an)',
+        'Formulaire de contact avec envoi par <tooltip>e-mail</tooltip>',
+        'Carte <tooltip>Google Maps</tooltip> intégrée',
+        '<tooltip>Réseaux sociaux</tooltip> cliquables',
+        '<tooltip>Mentions légales</tooltip> & <tooltip>politique de confidentialité</tooltip>',
+        'Bandeau <tooltip>cookies RGPD</tooltip> + gestion du consentement',
+        'Menu classique (<tooltip>PDF</tooltip> ou <tooltip>HTML</tooltip> simple pour les restaurants)',
+        'Optimisation <tooltip>mobile</tooltip> & <tooltip>SEO local</tooltip> basique',
+        '<tooltip>Hébergement</tooltip> inclus pendant 1 an (puis ~80€/an)',
         '+ Option sur mesure (+?€)'
       ],
       icon: <Zap className="w-6 h-6" />,
@@ -40,12 +41,12 @@ const Packages = () => {
       subtitle: 'Le bon équilibre entre design, performance, outils de réservation et suivi du trafic.',
       features: [
         'Tout du Pack Essentiel',
-        'Module de réservation en ligne sur mesure',
-        'Galerie photo ou menu interactif',
-        'Optimisation SEO complète',
-        'Intégration Google Analytics + Pixel Meta',
+        'Module de <tooltip>réservation en ligne</tooltip> sur mesure',
+        '<tooltip>Galerie photo</tooltip> ou <tooltip>menu interactif</tooltip>',
+        'Optimisation <tooltip>SEO</tooltip> complète',
+        'Intégration <tooltip>Google Analytics</tooltip> + <tooltip>Pixel Meta</tooltip>',
         'Formation personnalisée (30 min)',
-        '+ Automatisation e-mail/CRM (+90€)',
+        '+ Automatisation <tooltip>e-mail/CRM</tooltip> (+90€)',
         '+ Intégration vidéo (+60€)',
         '+ Langue supplémentaire (+50€)',
         '+ Option sur mesure (+?€)'
@@ -63,11 +64,11 @@ const Packages = () => {
       subtitle: 'Conçu pour piloter toute votre communication digitale et automatiser vos outils métier.',
       features: [
         'Tout du Pack Avancé',
-        'Référencement local avancé (GMB + netlinking)',
-        'Système de réservation 100% sur-mesure',
-        'Affichage d\'avis clients intégré',
-        'Blog / Section actualités',
-        '+ Automatisation e-mail/CRM (+80€)',
+        '<tooltip>Référencement local</tooltip> avancé (<tooltip>GMB</tooltip> + <tooltip>netlinking</tooltip>)',
+        'Système de <tooltip>réservation</tooltip> 100% sur-mesure',
+        'Affichage d\'<tooltip>avis clients</tooltip> intégré',
+        '<tooltip>Blog</tooltip> / Section actualités',
+        '+ Automatisation <tooltip>e-mail/CRM</tooltip> (+80€)',
         '+ Intégration vidéo (+50€)',
         '+ Langue supplémentaire (+40€)',
         '+ Option sur mesure (+?€)'
@@ -78,6 +79,57 @@ const Packages = () => {
       bgGradient: 'from-purple-50 to-pink-50'
     }
   ];
+
+  // Définitions des termes techniques
+  const tooltipDefinitions: { [key: string]: string } = {
+    'e-mail': 'Courrier électronique - système de communication qui permet d\'envoyer des messages via internet',
+    'Google Maps': 'Service de cartographie de Google qui permet d\'afficher votre localisation sur une carte interactive',
+    'Réseaux sociaux': 'Liens vers vos pages Facebook, Instagram, etc. pour que vos clients puissent vous suivre',
+    'Mentions légales': 'Informations obligatoires sur votre entreprise (nom, adresse, SIRET, etc.)',
+    'politique de confidentialité': 'Document expliquant comment vos données clients sont collectées et utilisées',
+    'cookies RGPD': 'Petits fichiers stockés sur l\'ordinateur des visiteurs, avec leur consentement selon la loi européenne',
+    'PDF': 'Format de document qui s\'affiche de la même façon sur tous les appareils (ordinateur, téléphone, tablette)',
+    'HTML': 'Format web interactif qui s\'adapte automatiquement à la taille de l\'écran',
+    'mobile': 'Optimisé pour les smartphones et tablettes - votre site s\'affiche parfaitement sur tous les écrans',
+    'SEO local': 'Techniques pour apparaître en premier sur Google quand on cherche votre activité dans votre ville',
+    'Hébergement': 'Service qui stocke votre site sur internet pour qu\'il soit accessible 24h/24',
+    'réservation en ligne': 'Système permettant à vos clients de prendre rendez-vous directement sur votre site',
+    'réservation': 'Système de prise de rendez-vous automatique pour vos clients',
+    'Galerie photo': 'Section dédiée pour présenter vos réalisations, votre établissement ou vos produits en images',
+    'menu interactif': 'Menu de restaurant consultable en ligne avec photos, descriptions et prix',
+    'SEO': 'Optimisation pour les moteurs de recherche - techniques pour être mieux classé sur Google',
+    'Google Analytics': 'Outil gratuit de Google pour connaître le nombre de visiteurs et leur comportement sur votre site',
+    'Pixel Meta': 'Outil de Facebook/Instagram pour suivre les visiteurs et créer des publicités ciblées',
+    'e-mail/CRM': 'Système d\'envoi automatique d\'emails (confirmations, rappels, newsletters) et de gestion client',
+    'Référencement local': 'Ensemble de techniques pour apparaître en premier sur Google dans votre zone géographique',
+    'GMB': 'Google My Business - votre fiche d\'entreprise sur Google avec avis, horaires, photos',
+    'netlinking': 'Technique pour obtenir des liens depuis d\'autres sites web vers le vôtre (améliore votre position sur Google)',
+    'avis clients': 'Système d\'affichage des commentaires et notes de vos clients sur votre site',
+    'Blog': 'Section actualités pour partager des conseils, nouveautés et améliorer votre référencement'
+  };
+
+  // Fonction pour remplacer les termes par des tooltips
+  const renderTextWithTooltips = (text: string) => {
+    // Rechercher les termes entre <tooltip> et </tooltip>
+    const parts = text.split(/(<tooltip>.*?<\/tooltip>)/g);
+    
+    return parts.map((part, index) => {
+      const tooltipMatch = part.match(/<tooltip>(.*?)<\/tooltip>/);
+      if (tooltipMatch) {
+        const term = tooltipMatch[1];
+        const definition = tooltipDefinitions[term];
+        if (definition) {
+          return (
+            <Tooltip key={index} content={definition}>
+              {term}
+            </Tooltip>
+          );
+        }
+        return term;
+      }
+      return part;
+    });
+  };
 
   const nextPackage = () => {
     setCurrentPackage((prev) => (prev + 1) % packages.length);
@@ -111,7 +163,7 @@ const Packages = () => {
         {/* Version Desktop - Grid */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-8">
           {packages.map((pkg, index) => (
-            <PackageCard key={index} pkg={pkg} index={index} />
+            <PackageCard key={index} pkg={pkg} index={index} renderTextWithTooltips={renderTextWithTooltips} />
           ))}
         </div>
 
@@ -144,7 +196,7 @@ const Packages = () => {
                 >
                   {packages.map((pkg, index) => (
                     <div key={index} className="w-full flex-shrink-0 px-4 pt-8">
-                      <PackageCard pkg={pkg} index={index} />
+                      <PackageCard pkg={pkg} index={index} renderTextWithTooltips={renderTextWithTooltips} />
                     </div>
                   ))}
                 </div>
@@ -190,7 +242,7 @@ const Packages = () => {
 };
 
 // Composant PackageCard séparé pour éviter la duplication
-const PackageCard = ({ pkg, index }: { pkg: any; index: number }) => (
+const PackageCard = ({ pkg, index, renderTextWithTooltips }: { pkg: any; index: number; renderTextWithTooltips: (text: string) => any }) => (
   <div
     className={`relative bg-white rounded-2xl shadow-lg flex flex-col ${
       pkg.popular ? 'ring-2 ring-blue-500 scale-105' : ''
@@ -239,7 +291,9 @@ const PackageCard = ({ pkg, index }: { pkg: any; index: number }) => (
                 <Check className="w-3 h-3 text-white" />
               )}
             </div>
-            <span className="text-gray-700 text-sm hover:text-gray-900 transition-colors duration-200">{feature}</span>
+            <span className="text-gray-700 text-sm hover:text-gray-900 transition-colors duration-200">
+              {renderTextWithTooltips(feature)}
+            </span>
           </li>
         ))}
       </ul>
