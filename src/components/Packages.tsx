@@ -23,7 +23,7 @@ const Packages = () => {
         '<tooltip>Réseaux sociaux</tooltip> cliquables',
         '<tooltip>Mentions légales</tooltip> & <tooltip>politique de confidentialité</tooltip>',
         'Bandeau <tooltip>cookies RGPD</tooltip> + gestion du consentement',
-        'Menu classique (<tooltip>PDF</tooltip> ou <tooltip>HTML</tooltip> simple pour les restaurants)',
+        'Menu classique, prestation (<tooltip>PDF</tooltip> ou <tooltip>HTML</tooltip> simple pour les restaurants)',
         'Optimisation <tooltip>mobile</tooltip> & <tooltip>SEO local</tooltip> basique',
         '<tooltip>Hébergement</tooltip> inclus pendant 1 an (puis ~80€/an)',
         '+ Option sur mesure (+?€)'
