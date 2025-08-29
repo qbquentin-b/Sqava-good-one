@@ -19,8 +19,8 @@ const Packages = () => {
         'Jusqu\'à 5 pages (Accueil, Prestations, À propos, Contact, etc.)',
         'Design personnalisé aux couleurs de l\'activité',
         'Formulaire de contact avec envoi par <tooltip>e-mail</tooltip>',
-        'Carte <tooltip>Google Maps</tooltip> intégrée',
-        '<tooltip>Réseaux sociaux</tooltip> cliquables',
+        'Carte Google Maps intégrée',
+        '<tooltip>Réseaux sociaux cliquables</tooltip>',
         '<tooltip>Mentions légales</tooltip> & <tooltip>politique de confidentialité</tooltip>',
         'Bandeau <tooltip>cookies RGPD</tooltip> + gestion du consentement',
         'Menu classique, prestation (<tooltip>PDF</tooltip> ou <tooltip>HTML</tooltip> simple pour les restaurants)',
@@ -82,9 +82,7 @@ const Packages = () => {
 
   // Définitions des termes techniques
   const tooltipDefinitions: { [key: string]: string } = {
-    'e-mail': 'Courrier électronique - système de communication qui permet d\'envoyer des messages via internet',
-    'Google Maps': 'Service de cartographie de Google qui permet d\'afficher votre localisation sur une carte interactive',
-    'Réseaux sociaux': 'Liens vers vos pages Facebook, Instagram, etc. pour que vos clients puissent vous suivre',
+    'Réseaux sociaux cliquables': 'Liens vers vos pages Facebook, Instagram, etc. pour que vos clients puissent vous suivre',
     'Mentions légales': 'Informations obligatoires sur votre entreprise (nom, adresse, SIRET, etc.)',
     'politique de confidentialité': 'Document expliquant comment vos données clients sont collectées et utilisées',
     'cookies RGPD': 'Petits fichiers stockés sur l\'ordinateur des visiteurs, avec leur consentement selon la loi européenne',

@@ -56,13 +56,14 @@ const Tooltip: React.FC<TooltipProps> = ({ children, content, className = '' }) 
       <span
         ref={triggerRef}
         className={`border-b-2 border-dotted border-blue-500 cursor-help hover:border-blue-700 transition-colors duration-200 ${className}`}
+       className={`border-b-2 border-dotted border-gray-400 cursor-help hover:border-gray-600 transition-colors duration-200 ${className}`}
         onMouseEnter={() => !isMobile && setIsVisible(true)}
         onMouseLeave={() => !isMobile && setIsVisible(false)}
         onClick={handleInteraction}
       >
         {children}
         {isMobile && (
-          <Info className="inline w-3 h-3 ml-1 text-blue-500" />
+          <Info className="inline w-3 h-3 ml-1 text-gray-500" />
         )}
       </span>
       
