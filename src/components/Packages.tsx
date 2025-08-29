@@ -166,10 +166,10 @@ const Packages = () => {
         </div>
 
         {/* Version Mobile/Tablet - Carrousel horizontal */}
-        <div className="lg:hidden relative pt-8 overflow-visible">
+        <div className="lg:hidden relative">
           <div className="relative overflow-hidden">
             {/* Carrousel avec flèches intégrées */}
-            <div className="relative overflow-visible">
+            <div className="relative overflow-hidden">
               {/* Flèche gauche */}
               <button
                 onClick={prevPackage}
@@ -187,13 +187,13 @@ const Packages = () => {
               </button>
 
               {/* Carrousel */}
-              <div className="overflow-visible">
+              <div className="overflow-hidden">
                 <div 
                   className="flex transition-transform duration-300 ease-in-out"
                   style={{ transform: `translateX(-${currentPackage * 100}%)` }}
                 >
                   {packages.map((pkg, index) => (
-                    <div key={index} className="w-full flex-shrink-0 px-4 overflow-visible">
+                    <div key={index} className="w-full flex-shrink-0 px-4 pt-8">
                       <PackageCard pkg={pkg} index={index} renderTextWithTooltips={renderTextWithTooltips} />
                     </div>
                   ))}
@@ -242,12 +242,12 @@ const Packages = () => {
 // Composant PackageCard séparé pour éviter la duplication
 const PackageCard = ({ pkg, index, renderTextWithTooltips }: { pkg: any; index: number; renderTextWithTooltips: (text: string) => any }) => (
   <div
-    className={`relative bg-white rounded-2xl shadow-lg flex flex-col overflow-visible ${
+    className={`relative bg-white rounded-2xl shadow-lg flex flex-col ${
       pkg.popular ? 'ring-2 ring-blue-500 scale-105' : ''
     }`}
   >
     {pkg.popular && (
-      <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 animate-bounce-in animate-delay-400">
+      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 animate-bounce-in animate-delay-400">
         <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-semibold animate-pulse-glow">
           ⭐ Le plus populaire
         </div>
