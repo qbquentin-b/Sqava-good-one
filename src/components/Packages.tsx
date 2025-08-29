@@ -193,7 +193,7 @@ const Packages = () => {
                   style={{ transform: `translateX(-${currentPackage * 100}%)` }}
                 >
                   {packages.map((pkg, index) => (
-                    <div key={index} className="w-full flex-shrink-0 px-4 pt-8">
+                    <div key={index} className="w-full flex-shrink-0 px-4 pt-12">
                       <PackageCard pkg={pkg} index={index} renderTextWithTooltips={renderTextWithTooltips} />
                     </div>
                   ))}
