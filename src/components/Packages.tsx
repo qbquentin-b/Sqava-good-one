@@ -248,7 +248,7 @@ const PackageCard = ({ pkg, index, renderTextWithTooltips }: { pkg: any; index: 
   >
     {pkg.popular && (
       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 animate-bounce-in animate-delay-400">
-        <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold animate-pulse-glow">
+        <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-semibold animate-pulse-glow">
           ⭐ Le plus populaire
         </div>
       </div>
